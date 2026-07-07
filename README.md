@@ -219,7 +219,7 @@ http://127.0.0.1:8000/
 * Analytics Dashboard
 * Online Payment Integration
 * Django REST API Integration
-*AI Chatbot Integration
+* AI Chatbot Integration
 
 ---
 
