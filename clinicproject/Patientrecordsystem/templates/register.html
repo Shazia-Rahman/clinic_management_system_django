@@ -1,0 +1,43 @@
+{% extends base_template %}
+
+{% block content %}
+
+<div class="register-container">
+
+    <h2>User Registration</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <label>Full Name</label>
+        <input type="text" name="full_name" placeholder="Enter Full Name" required>
+
+        <label>Username</label>
+        <input type="text" name="username" placeholder="Enter Username" required>
+
+        <label>Email</label>
+        <input type="email" name="email" placeholder="Enter Email Address" required>
+
+        <label>Password</label>
+        <input type="password" name="password" placeholder="Enter Password" required>
+
+        <label>Confirm Password</label>
+        <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+
+        <label>Role</label>
+        <select name="role" required>
+            <option value="">Select Role</option>
+            <option value="Admin">Admin</option>
+            <option value="Receptionist">Receptionist</option>
+            <option value="Doctor">Doctor</option>
+        </select>
+
+        <button type="submit" class="register-btn">
+            Register
+        </button>
+
+    </form>
+
+</div>
+
+{% endblock %}

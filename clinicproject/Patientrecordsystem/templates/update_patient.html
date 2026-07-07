@@ -1,0 +1,35 @@
+{% extends base_template %}
+
+{% block content %}
+
+<div class="card">
+
+    <h2>Update Patient</h2>
+    <p>Re-enter patient information below.</p>
+
+</div>
+<br></br>
+
+
+
+
+
+<form method="POST" enctype="multipart/form-data">
+
+    {% csrf_token %}
+
+    {{ f  }}
+    
+
+    <button type="submit" class="btn">
+        Update Patient
+    </button>
+
+</form>
+
+
+
+
+
+
+{% endblock %}

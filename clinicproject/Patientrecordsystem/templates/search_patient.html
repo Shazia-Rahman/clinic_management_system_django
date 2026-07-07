@@ -1,0 +1,51 @@
+{% extends base_template %}
+
+{% block content %}
+
+<div class="card">
+
+    <h2>Search Patient</h2>
+
+    <p>Search patient by name.</p>
+
+</div>
+
+<br>
+
+<div class="search-box">
+
+    <form>
+
+        <label>Patient Name</label>
+
+        <input
+            type="text"
+            placeholder="Enter Patient Name">
+
+        <button class="btn">
+            Search
+        </button>
+
+    </form>
+
+</div>
+
+<table>
+
+    <tr>
+        <th>Patient ID</th>
+        <th>Patient Name</th>
+        <th>Age</th>
+        <th>Doctor Assigned</th>
+    </tr>
+
+    <tr>
+        <td>P001</td>
+        <td>Ali Hassan</td>
+        <td>28</td>
+        <td>Dr. Ahmed</td>
+    </tr>
+
+</table>
+
+{% endblock %}

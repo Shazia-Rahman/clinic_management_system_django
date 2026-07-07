@@ -1,0 +1,59 @@
+{% extends base_template %}
+ 
+
+{% block content %}
+
+<div class="card">
+
+    <h2>Patient Records</h2>
+
+    <p>List of all registered patients.</p>
+
+</div>
+
+<br>
+
+<table>
+
+    <tr>
+        <th>Patient ID</th>
+        <th>Patient Name</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Phone Number</th>
+        <th>Doctor Assigned</th>
+        <th>Date of Visit</th>
+        <th>Actions</th>
+    </tr>
+
+    <tr>
+        <td>P001</td>
+        <td>Ali Hassan</td>
+        <td>28</td>
+        <td>Male</td>
+        <td>9876543210</td>
+        <td>Dr. Ahmed</td>
+        <td>16-06-2026</td>
+        <td>
+            <button class="edit-btn">Edit</button>
+            <button class="delete-btn">Delete</button>
+        </td>
+    </tr>
+
+    <tr>
+        <td>P002</td>
+        <td>Sara Khan</td>
+        <td>25</td>
+        <td>Female</td>
+        <td>9876543211</td>
+        <td>Dr. Ali</td>
+        <td>15-06-2026</td>
+        <td>
+            <button class="edit-btn">Edit</button>
+            <button class="delete-btn">Delete</button>
+        </td>
+    </tr>
+
+</table>
+
+{% endblock %}

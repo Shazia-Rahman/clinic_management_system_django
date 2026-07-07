@@ -1,0 +1,39 @@
+{% extends base_template %}
+
+{% block content %}
+
+<div class="card">
+
+    <h2>Book Today's Appointment</h2>
+    <p>Enter patient information below.</p>
+
+</div>
+<br></br>
+
+{% if messages %}
+    {% for message in messages %}
+        <div class="message" >
+        {{ message }}</div>
+{% endfor %}
+{% endif %}
+<br>
+
+
+
+
+<form method="POST" enctype="multipart/form-data">
+
+    {% csrf_token %}
+
+    {{ f }}
+    
+
+    <button type="submit" class="btn">
+        Confirm Booking
+    </button>
+
+</form>
+
+
+
+{% endblock %}

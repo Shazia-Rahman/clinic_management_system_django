@@ -1,0 +1,33 @@
+{% extends 'base_template.html' %}
+
+{% block content %}
+
+<div class="login-container">
+
+    <h2>User Login</h2>
+
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <label>Username</label>
+        <input type="text" name="username" placeholder="Enter Username" required>
+
+        <label>Password</label>
+        <input type="password" name="password" placeholder="Enter Password" required>
+
+        <button type="submit" class="login-btn">Login</button>
+
+    </form>
+
+    <p class="register-link">
+        Don't have an account?
+        <a href="/register/">Register Here</a>
+    </p>
+
+</div>
+
+{% endblock %}

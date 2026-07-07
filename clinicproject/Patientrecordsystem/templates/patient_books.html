@@ -1,0 +1,38 @@
+{% extends base_template %}
+
+{% block content %}
+
+<h2>Total Patients: {{ total_patients_t }}</h2>
+
+
+<table>
+    <tr>
+        <th>patient_name</th>
+        <th>phone_number</th>
+        <th>time_slot</th>
+        <th>appointment_date</th>
+        <th>reason_for_visit</th>
+        
+    </tr>
+    {% for patients in patient%}
+   
+    <tr>
+        <td> {{ patients.patient_name }}</td>
+        <td> {{ patients.phone_number }}</td>
+        <td> {{ patients.time_slot }}</td>
+        <td> {{ patients.appointment_date }}</td>
+         <td> {{ patients.reason_for_visit }}</td>
+
+
+    </tr>
+    {% endfor %}
+    
+</table>   
+
+
+
+
+
+
+
+{% endblock %}

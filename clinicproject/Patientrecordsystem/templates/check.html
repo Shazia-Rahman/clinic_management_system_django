@@ -1,0 +1,40 @@
+{% extends base_template %}
+
+{% block content %}
+<h2>Book Appointment</h2>
+<br></br>
+<div class="appointment" >
+<p>
+    Selected Doctor:
+    <strong>{{ doctor_name }}</strong>
+</p>
+
+<form>
+
+    <label>Patient Name</label>
+    <input type="text">
+
+    <label>Phone Number</label>
+    <input type="text">
+
+    <label>Appointment Date</label>
+    <input type="date">
+
+    <label>Time Slot</label>
+    <select>
+        <option>09:00 AM</option>
+        <option>10:00 AM</option>
+        <option>11:00 AM</option>
+    </select>
+
+    <label>Reason for Visit</label>
+    <textarea></textarea>
+
+    <button type="submit">
+        Confirm Appointment
+    </button>
+
+</form>
+
+</div>
+{% endblock %}

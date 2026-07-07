@@ -1,0 +1,30 @@
+{% extends base_template %}
+
+{% block content %}
+<h2>Delete Patient</h2>
+<br></br>
+
+<div class="delete_header" >
+
+<p>
+    Are you sure you want to delete
+    <strong>{{ patient.patient_name }}</strong> ?
+</p>
+</div>
+<br></br>
+
+<form method="POST">
+
+    {% csrf_token %}
+<div class="delete-btn" >
+    <button type="submit" class="delete-btn">
+        Confirm Delete
+    </button>
+</div>
+</form>
+
+{% endblock %}
+
+
+
+

@@ -1,0 +1,59 @@
+{% extends base_template %}
+
+{% block content %}
+
+<div class="card">
+
+    <h2>Clinic Dashboard</h2>
+
+    <p>Welcome, Admin 👋
+     </p>
+        <p>Manage your client efficiently.
+   </p>
+   </div>
+   <br><br>
+   <div class = "dashboard-cards">
+   <div class="cards">
+    <h3>Total Patients</h3>
+    <h1>{{ total_patients }}</h1>
+</div>
+
+<div class="cards">
+    <h3>Today's Available Doctors</h3>
+    <a href="/add_doctor/">
+        
+                <button class="edit-btns">
+                    doctor
+                </button>
+
+            </a>
+</div>
+
+
+
+
+<div class="cards">
+    <h3>Today's Appointments</h3>
+    <a href="/patient_books/">
+        
+                <button class="edit-btns">
+                    Schedule
+                </button>
+
+            </a>
+            </div>
+
+<div class="cards">
+    <h3>Quick Action</h3>
+    <a href="/add_patient/">Add Patient</a>
+    <br>
+      <a href="/add_doctor/">
+        
+               Add_doctor </a>
+               <br>
+               <a href="logout/"> Logout</a>
+</div>
+
+</div>
+
+{% endblock %}

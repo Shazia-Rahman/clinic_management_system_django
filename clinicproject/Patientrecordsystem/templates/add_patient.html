@@ -1,0 +1,99 @@
+{% extends base_template %}
+
+{% block content %}
+
+<div class="card">
+
+    <h2>Add New Patient</h2>
+    <p>Enter patient information below.</p>
+
+</div>
+<br></br>
+
+
+
+{% if messages %}
+    {% for message in messages %}
+        <div class="message" >
+        {{ message }}</div>
+{% endfor %}
+{% endif %}
+        
+<br>
+
+<form method="POST" enctype="multipart/form-data">
+
+    {% csrf_token %}
+
+     <div>
+        <label>patient_id</label>
+        {{ f.patient_id}}
+    </div>
+
+    <div>
+        <label>Patient Name</label>
+        {{ f.patient_name }}
+    </div>
+
+    <div>
+        <label>Age</label>
+        {{ f.age }}
+    </div>
+<div class="gender">
+    <strong>Gender:</strong>
+
+    {% for radio in f.gender %}
+        <label>
+            {{ radio.tag }}
+            {{ radio.choice_label }}
+        </label>
+    {% endfor %}
+</div>
+
+  <br>  
+
+
+    <div>
+        <label>Phone Number</label>
+        {{ f.phone_number }}
+    </div>
+
+     <div>
+        <label>Visiting_Date</label>
+        {{ f.date_of_visit }}
+    </div>
+
+     <div>
+        <label>Address</label>
+        {{ f.address }}
+    </div>
+
+     <div>
+        <label>Symptoms</label>
+        {{ f.symptoms }}
+    </div>
+
+    
+     <div>
+        <label>Dr. Assigned</label>
+        {{ f.doctor_assigned }}
+    </div>
+
+   
+
+    <button type="submit" class="btn">
+        Add Patient
+    </button>
+    <br><br>
+
+    <p><a href="{% url 'add_patient' %}" download>Patient Record Catalog (PDF)</a></p>
+    <br>
+    <p><a href="{% url 'generate_csv' %}" download>Patient Record Catalog (CSV)</a></p>
+<br>
+</form> 
+
+
+
+
+
+{% endblock %}

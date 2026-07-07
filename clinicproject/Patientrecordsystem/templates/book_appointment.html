@@ -1,0 +1,72 @@
+{% extends base_template %}
+
+{% block content %}
+
+<div class="card">
+
+    <h2>Book Appointment</h2>
+
+    <p>
+        Select a doctor and book your appointment.
+    </p>
+
+</div>
+
+<br>
+
+<div class="doctor-container">
+
+  
+
+    <div class="doctor-card">
+        <h3>Dr. Ahmed Khan</h3>
+        <p>General Physician</p>
+        <p>Available: Mon - Sat</p>
+
+         <a href="/appointment_form/Dr. Ahmed Khan/">
+      
+            
+    <button class="btn">
+        Book Appointment
+    </button>
+</a>
+    </div>
+
+    <div  class="doctor-card">
+        <h3>Dr. Ali Hassan</h3>
+        <p>Cardiologist</p>
+        <p>Available: Mon - Fri</p>
+
+        <a href="/appointment_form/Dr. Ali Hassan /">
+
+        <button type="submit" class="appointment-btn">
+            Book Appointment
+        </button>
+    </a>
+    </div>
+
+    <div  class="doctor-card">
+        <h3>Dr. Sarah Ahmed</h3>
+        <p>Dermatologist</p>
+        <p>Available: Tue - Sat</p>
+<a href="/appointment_form/Dr. Ahmed Khan/">
+        <button type ="submit" class="appointment-btn">
+            Book Appointment
+        </button>
+    </a>
+    </div>
+
+    <div class="doctor-card">
+        <h3>Dr. Fatima Noor</h3>
+        <p>Pediatrician</p>
+        <p>Available: Mon - Sat</p>
+<a href="/appointment_form/Dr. Ahmed Khan/">
+        <button type="submit" class="appointment-btn">
+            Book Appointment
+        </button>
+    </a>
+    </div>
+
+</div>
+
+{% endblock %}

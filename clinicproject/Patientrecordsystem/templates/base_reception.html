@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reception Panel</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+<div class="sidebar">
+
+    <h2>Reception Panel</h2>
+
+    <a href="/reception/">🏠 Dashboard</a>
+
+    <a href="/add_patient/">➕ Add Patient</a>
+
+    <a href="/manage_patient/">👥 Manage Patients</a>
+
+    <a href="/appointment_form/">📅 Book Appointment</a>
+
+    <a href="/patient_books/">📋 Today's Appointments</a>
+
+    <a href="/logout/">🚪 Logout</a>
+
+</div>
+
+<div class="main-content">
+
+    <div class="header">
+        <h1>Reception Dashboard</h1>
+    </div>
+
+    {% block content %}
+    {% endblock %}
+
+</div>
+
+</body>
+</html>

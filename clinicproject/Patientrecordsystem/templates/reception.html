@@ -1,0 +1,88 @@
+{% extends base_template %}
+
+{% block content %}
+
+<div class="card">
+    <h2>Welcome Receptionist 👋</h2>
+    <p>Manage patients and appointments efficiently.</p>
+</div>
+
+<br>
+
+<div class="dashboard-cards">
+
+    <div class="cards">
+        <h3>Total Patients</h3>
+        <h1>{{ total_patients }}</h1>
+    </div>
+
+    <div class="cards">
+        <h3>Today's Appointments</h3>
+        <h1>{{ today_appointments }}</h1>
+    </div>
+
+    <div class="cards">
+        <h3>Total Doctors</h3>
+        <h1>{{ total_doctors }}</h1>
+    </div>
+
+    <div class="cards">
+        <h3>Quick Actions</h3>
+
+        <br>
+
+        <a href="/add_patient/">
+            <button class="edit-btns">
+                Add Patient
+            </button>
+        </a>
+
+        <br><br>
+
+        <a href="/book_appointment/">
+            <button class="edit-btns">
+                Book Appointment
+            </button>
+        </a>
+
+    </div>
+
+</div>
+
+<br><br>
+
+<div class="card">
+    <h2>Today's Appointment List</h2>
+</div>
+
+<br>
+
+<table>
+
+    <tr>
+        <th>Patient</th>
+        <th>Doctor</th>
+        <th>Time</th>
+        <th>Phone</th>
+    </tr>
+
+    {% for appointment in appointments %}
+
+    <tr>
+        <td>{{ appointment.patient_name }}</td>
+        <td>{{ appointment.doctor.doctor_name }}</td>
+        <td>{{ appointment.time_slot }}</td>
+        <td>{{ appointment.phone_number }}</td>
+    </tr>
+
+    {% empty %}
+
+    <tr>
+        <td colspan="4">No Appointments Today</td>
+    </tr>
+
+    {% endfor %}
+
+</table>
+
+{% endblock %}

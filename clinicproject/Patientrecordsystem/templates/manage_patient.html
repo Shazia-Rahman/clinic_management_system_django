@@ -1,0 +1,152 @@
+{% extends base_template %}
+
+{% block content %}
+
+<div class="stats-card">
+
+    <h2>Total Patients</h2>
+
+    <h1>{{ total_patients }}</h1>
+
+</div>
+
+<br>
+
+<div class="search-box">
+
+    <form method="GET">
+
+        <input
+            type="text"
+            name="search"
+            placeholder="Search by Patient Name or ID"
+        >
+
+        <button type="submit">
+            Search
+        </button>
+
+    </form>
+
+</div>
+
+<br>
+
+<div class="card">
+
+    <h2>Manage Patients</h2>
+
+    <p>
+        View, search, update and delete patient records.
+    </p>
+
+</div>
+<br>
+<!-- <div  class ="card">
+    <h2>View today's appointments schedule</h2>
+    <br>
+
+     <a href="/patient_books/">
+        
+                <button class="edit-btn">
+                    Click
+                </button>
+
+            </a>
+        </div> -->
+
+<br>
+
+<table>
+
+    <tr>
+        <th>Patient ID</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Phone</th>
+        <th>Doctor</th>
+        <th>Visit Date</th>
+        <th>Update</th>
+        <th>Delete</th>
+    </tr>
+
+    {% for patient in page_obj %}
+
+    <tr>
+
+        <td>{{ patient.patient_id }}</td>
+        <td>{{ patient.patient_name }}</td>
+        <td>{{ patient.age }}</td>
+        <td>{{ patient.gender }}</td>
+        <td>{{ patient.phone_number }}</td>
+        <td>{{ patient.doctor_assigned }}</td>
+        <td>{{ patient.date_of_visit }}</td>
+
+        <td>
+
+
+
+            <a href="/update_patient/{{ patient.id }}/">
+
+                <button class="edit-btn">
+                    Update
+                </button>
+
+            </a>
+
+        </td>
+
+        <td>
+
+            <a href="/delete_patient/{{ patient.id }}/">
+
+                <button class="delete-btn">
+                    Delete
+                </button>
+
+            </a>
+
+        </td>
+
+    </tr>
+
+    {% empty %}
+
+    <tr>
+
+        <td colspan="9">
+            No patient records found.
+        </td>
+
+    </tr>
+
+    {% endfor %}
+
+</table>
+
+<div class="pagination">
+
+    <span>
+        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+    </span>
+
+    {% if page_obj.has_previous %}
+        <a href="?page=1">First</a>
+        <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+    {% endif %}
+
+
+    {% if page_obj.has_next %}  
+        <a href="?page={{ page_obj.next_page_number }}">Next</a>
+        <a href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+
+    {% endif %}    
+
+    
+    
+        
+    
+</div>
+
+{% endblock %}
